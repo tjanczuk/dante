@@ -19,5 +19,3 @@ http://localhost:8888
 ```
 
 Enjoy!
-
-Foo
