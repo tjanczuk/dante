@@ -1,7 +1,7 @@
 Dante over WebSockets
 ===
 
-This is a sample node.js application that streams Dante's Divine Comedy, Cante 1, to the browser client over WebSockets,
+This is a sample node.js application that streams Dante's Divine Comedy, Canto 1, to the browser client over WebSockets,
 one stanza every 2 seconds. 
 
 **Instructions**
