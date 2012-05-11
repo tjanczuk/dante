@@ -1,0 +1,18 @@
+<html>
+<title>Dante</title>
+<head>
+<script>
+	var socket = new WebSocket('ws://' + window.location.host);
+	var body;
+	socket.onmessage = function (msg) {
+		body = body || document.getElementsByTagName('body')[0];
+		var div = document.createElement('div');
+		div.appendChild(document.createTextNode(msg.data));
+		body.appendChild(div);		
+	};
+</script>
+</head>
+<body>
+	<h1>Dante over WebSockets</h1>
+</body>
+</html>
