@@ -2,7 +2,8 @@
 <title>Dante</title>
 <head>
 <script>
-	var socket = new WebSocket('ws://' + window.location.host);
+	var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+	var socket = new WebSocket(protocol + window.location.host);
 	var body;
 	socket.onmessage = function (msg) {
 		body = body || document.getElementsByTagName('body')[0];
