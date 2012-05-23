@@ -3,7 +3,7 @@
 <head>
 <script>
 	var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
-	var socket = new WebSocket(protocol + window.location.host);
+	var socket = new WebSocket(protocol + window.location.host + window.location.pathname);
 	var body;
 	socket.onmessage = function (msg) {
 		body = body || document.getElementsByTagName('body')[0];
