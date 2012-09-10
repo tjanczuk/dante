@@ -22,6 +22,10 @@
         addLine('Unable to establish WebSocket connection to ' + address);
     };
 
+    socket.onclose = function () {
+        addLine('WebSocket connection is closed.');
+    };
+
 </script>
 </head>
 <body>
