@@ -3,7 +3,7 @@
 <head>
 <script>
     var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
-    var address = protocol + window.location.host + window.location.pathname + '/please-dont-cache-me';
+    var address = protocol + window.location.host + window.location.pathname + '/ws';
     var socket = new WebSocket(address);
     var body;
 
