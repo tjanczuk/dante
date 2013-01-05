@@ -34,6 +34,12 @@ http://localhost:8888
 
 You must be running [Windows 8](http://windows.microsoft.com/en-US/windows-8/download) or [Windows Server 2012](http://technet.microsoft.com/en-us/evalcenter/hh670538.aspx) with IIS 8.0 and [iisnode v0.2.x](https://github.com/tjanczuk/iisnode) or later installed. WebSocket functionality is not available in prior versions of Windows, IIS, or iisnode. 
 
+Install dependencies:
+
+```
+npm install
+```
+
 Next, you must set up an IIS application pointing to the location of the code:
 
 ```
