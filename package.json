@@ -1,0 +1,8 @@
+{
+  "name": "dante",
+  "version": "0.0.2",
+  "dependencies": {
+    "faye-websocket": "0.4.3",
+    "socket.io": "0.9.13"
+  }
+}

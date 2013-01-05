@@ -1,50 +1,4 @@
-
-var WebSocket = require('faye-websocket')
-    , http = require('http')
-    , path = require('path')
-    , fs = require('fs');
-
-var server = http.createServer(handler);
-
-server.addListener('upgrade', function(request, socket, head) {
-    var ws = new WebSocket(request, socket, head);
-
-    function schedule(line) {
-        if (line < canto1.length) 
-            setTimeout(function() {
-                if (ws) {
-                    ws.send(canto1[line]);
-                    schedule(line + 1);
-                }
-            }, 2000);
-        else if (ws)
-            ws.close();
-    }
-
-    ws.onclose = function(event) {
-        ws = null;
-    };
-
-    ws.send(canto1[0]);
-    schedule(1);
-});
-
-function handler (req, res) {
-    fs.readFile(path.resolve(__dirname, 'index.html'),
-        function (err, data) {
-        if (err) {
-            res.writeHead(500);
-            return res.end('Error loading index.html');
-        }
-
-        res.writeHead(200);
-        res.end(data);
-    });
-}
-
-server.listen(process.env.PORT || 8888);
-
-var canto1 = ['Midway upon the journey of our life I found myself within a forest dark, For the straightforward pathway had been lost.',
+exports.canto1 = ['Midway upon the journey of our life I found myself within a forest dark, For the straightforward pathway had been lost.',
     'Ah me! how hard a thing it is to say What was this forest savage, rough, and stern, Which in the very thought renews the fear.',
     'So bitter is it, death is little more; But of the good to treat, which there I found, Speak will I of the other things I saw there.',
     'I cannot well repeat how there I entered, So full was I of slumber at the moment In which I had abandoned the true way.',
@@ -90,3 +44,4 @@ var canto1 = ['Midway upon the journey of our life I found myself within a fores
     'And I to him: "Poet, I thee entreat, By that same God whom thou didst never know, So that I may escape this woe and worse,',
     'Thou wouldst conduct me there where thou hast said, That I may see the portal of Saint Peter, And those thou makest so disconsolate."',
     'Then he moved on, and I behind him followed.'];
+    
